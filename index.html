@@ -11,7 +11,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,500;1,300;1,500&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
-/* ===== 1. TOKENS ===== */
+
 :root{
   --forest:#10251D; --emerald:#173C30; --moss:#667B59; --sage:#A5B39A;
   --ivory:#EAE7D9; --beige:#C9C2AE; --black:#101511;
@@ -30,19 +30,19 @@ section{position:relative;padding:14vh 6vw}
 .sec-head{display:flex;justify-content:space-between;align-items:baseline;border-top:1px solid #667b5955;padding-top:14px;margin-bottom:8vh}
 .sec-head h2{font-size:clamp(2.4rem,6vw,5rem);font-style:italic}
 
-/* ===== 2. FILM GRAIN + LIGHT LEAK ===== */
+
 .grain{position:fixed;inset:-50%;z-index:90;pointer-events:none;opacity:.13;
   background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence baseFrequency='.8' numOctaves='2'/%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23n)'/%3E%3C/svg%3E");
   animation:grain 1s steps(6) infinite}
 @keyframes grain{0%{transform:translate(0,0)}20%{transform:translate(-4%,3%)}40%{transform:translate(3%,-5%)}60%{transform:translate(-5%,-2%)}80%{transform:translate(4%,4%)}100%{transform:translate(0,0)}}
 
-/* ===== 3. LOADER ===== */
+
 #loader{position:fixed;inset:0;z-index:100;background:var(--black);display:grid;place-items:center;transition:opacity 1s,visibility 1s}
 #loader.done{opacity:0;visibility:hidden}
 #loader div{text-align:center}
 #loader .count{font:300 italic 5rem var(--serif);color:var(--ivory)}
 
-/* ===== 4. NAV + HUD ===== */
+
 header{position:fixed;top:0;left:0;right:0;z-index:50;display:flex;justify-content:space-between;align-items:center;
   padding:calc(18px + env(safe-area-inset-top,0px)) 6vw 18px;mix-blend-mode:normal;transition:background .5s}
 header.solid{background:#101511e6}
@@ -55,7 +55,7 @@ nav a:hover::after,nav a.on::after{width:100%}
 .hud{position:fixed;left:6vw;bottom:calc(20px + env(safe-area-inset-bottom,0px));z-index:40;display:flex;gap:2rem;mix-blend-mode:difference}
 .hud span{color:var(--ivory)}
 
-/* ===== 5. HERO ===== */
+
 #hero{min-height:100vh;display:flex;flex-direction:column;justify-content:flex-end;padding-bottom:12vh;overflow:hidden;
   background:
    radial-gradient(60% 50% at 78% 30%,#d9c88a40,transparent 70%),
@@ -71,7 +71,7 @@ nav a:hover::after,nav a.on::after{width:100%}
 @keyframes pulse{50%{opacity:.25}}
 .scroll{position:absolute;right:6vw;bottom:12vh;writing-mode:vertical-rl}
 
-/* ===== 6. ABOUT ===== */
+
 .about{display:grid;grid-template-columns:1fr 1.4fr;gap:6vw;align-items:start}
 .portrait{aspect-ratio:3/4;background:linear-gradient(160deg,var(--moss),var(--emerald) 55%,var(--forest));position:relative;filter:saturate(.7)}
 .portrait img,.thumb img,.still img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
@@ -80,7 +80,7 @@ nav a:hover::after,nav a.on::after{width:100%}
 .about dl{display:grid;grid-template-columns:auto 1fr;gap:.5rem 2rem;margin-top:3rem}
 .about dd{margin:0;color:var(--beige)}
 
-/* ===== 7. WORKS ===== */
+
 .works{display:grid;grid-template-columns:repeat(12,1fr);gap:3vw 2vw}
 .work{grid-column:span 6;display:block}
 .work:nth-child(3n+1){grid-column:1/span 7}
@@ -95,7 +95,7 @@ nav a:hover::after,nav a.on::after{width:100%}
 .work h3{font-size:2rem;font-style:italic;margin:1rem 0 .3rem}
 .work p{margin:.2rem 0;color:var(--beige);max-width:44ch;font-size:.95rem}
 
-/* ===== 8. ATLAS ===== */
+
 #atlas{background:var(--forest)}
 .atlas{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:2.5rem 2rem}
 .film{border-top:1px solid #a5b39a33;padding-top:14px}
@@ -105,7 +105,7 @@ nav a:hover::after,nav a.on::after{width:100%}
 .film p{font-size:.9rem;color:var(--beige);margin:.6rem 0 0}
 .film .meta{color:var(--moss)}
 
-/* ===== 9. SKILLS / MILESTONES ===== */
+
 .skills{list-style:none;margin:0;padding:0;columns:2;column-gap:6vw}
 .skills li{break-inside:avoid;border-bottom:1px solid #a5b39a33;padding:1.1rem 0;display:flex;justify-content:space-between;align-items:baseline;gap:1rem;transition:padding .4s}
 .skills li:hover{padding-left:12px}
@@ -117,7 +117,7 @@ nav a:hover::after,nav a.on::after{width:100%}
 .stat span{display:block;margin-top:1rem}
 #milestones{background:var(--emerald)}
 
-/* ===== 10. CONTACT ===== */
+
 #contact{min-height:100vh;display:flex;flex-direction:column;justify-content:center;text-align:center;
   background:radial-gradient(70% 60% at 50% 110%,var(--moss)55,transparent),var(--black)}
 #contact h2{font-size:clamp(2.6rem,9vw,8rem);font-style:italic;margin:3vh 0}
@@ -126,7 +126,7 @@ nav a:hover::after,nav a.on::after{width:100%}
 .social a:hover{color:var(--ivory)}
 footer.end{margin-top:8vh;letter-spacing:.4em}
 
-/* ===== 11. MOTION + CURSOR ===== */
+
 .rv{opacity:0;transform:translateY(32px);transition:opacity 1.2s,transform 1.2s cubic-bezier(.2,.7,.2,1)}
 .rv.in{opacity:1;transform:none}
 #cur{position:fixed;z-index:95;width:14px;height:14px;border:1px solid var(--ivory);border-radius:50%;pointer-events:none;
@@ -134,7 +134,7 @@ footer.end{margin-top:8vh;letter-spacing:.4em}
 #cur.big{width:56px;height:56px;background:#eae7d933}
 @media (hover:hover) and (pointer:fine){.has-cur #cur{display:block}.has-cur,.has-cur a{cursor:none}}
 
-/* ===== 12. RESPONSIVE ===== */
+
 @media (max-width:820px){
   #burger{display:block}
   nav ul{position:fixed;inset:0;background:var(--black);flex-direction:column;justify-content:center;align-items:center;gap:2rem;
@@ -170,10 +170,10 @@ footer.end{margin-top:8vh;letter-spacing:.4em}
 </div>
 
 <main>
-<!-- ============ HERO ============ -->
+
 <section id="hero">
   <p class="meta" style="margin-bottom:2vh">Visual Archive — Vol. 001</p>
-  <!-- EDIT: your name or alias -->
+  
   <h1>Draco</h1>
   <p class="tag">An observer of moving images, fleeting moments, and everything in between.</p>
   <div class="hero-meta meta">
@@ -183,20 +183,20 @@ footer.end{margin-top:8vh;letter-spacing:.4em}
   <span class="scroll meta">Scroll ↓</span>
 </section>
 
-<!-- ============ ABOUT ============ -->
+
 <section id="about">
   <div class="sec-head"><span class="meta">Visual notes / 01</span><h2 class="rv">About</h2></div>
   <div class="about">
     <div class="portrait rv"><img src="images/portrait.jpg" alt="Portrait of Draco" onerror="this.remove()"></div>
     <div class="rv">
       <p class="lead">I edit the way some people write letters they never send — slowly, and mostly about what is left out.</p>
-      <!-- EDIT: your biography -->
-      <p>I’m a film editor, video editor and content creator working from the Philippines. My interest is in the pause between shots: the cut that arrives a beat late, the colour that lingers after the scene has gone.</p>
-      <p>I come to the edit through cinema and literature — Wong Kar-wai’s rain-soaked corridors, the quiet of Japanese novels, the grain of analog photographs. These are references, not credits; they are simply where I learned to look.</p>
+      
+      <p>I’m a film editor, video editor and content creator based from the Philippines. My interest is in the pause between shots: the cut that arrives a beat late, the colour that lingers after the scene has gone.</p>
+      <p>I come to the edit through cinema and literature, the quiet of Japanese novels, the grain of analog photographs. These are references, not credits; they are simply where I learned to look.</p>
       <dl class="meta">
         <dt>Name</dt><dd>Draco</dd>
         <dt>Location</dt><dd>Davao, Philippines</dd>
-        <dt>Roles</dt><dd>Film editor · Video editor · Visual storyteller</dd>
+        <dt>Roles</dt><dd>Film editor · Video editor · Yearner and Visual storyteller</dd>
         <dt>Interests</dt><dd>Arthouse cinema · Film photography · Literature</dd>
       </dl>
     </div>
@@ -209,7 +209,7 @@ footer.end{margin-top:8vh;letter-spacing:.4em}
   <div class="works" id="works-grid"></div>
 </section>
 
-<!-- ============ ATLAS ============ -->
+
 <section id="atlas">
   <div class="sec-head"><span class="meta">Influences — not credits</span><h2 class="rv">The Frames That Stay</h2></div>
   <p class="meta rv" style="max-width:60ch;margin:-4vh 0 6vh;line-height:1.9">A personal atlas of films that shaped how I see. Stills are colour studies, not reproductions; I have no connection to these productions.</p>
@@ -222,21 +222,21 @@ footer.end{margin-top:8vh;letter-spacing:.4em}
   <ul class="skills rv" id="skills-list"></ul>
 </section>
 
-<!-- ============ MILESTONES ============ -->
+
 <section id="milestones">
   <div class="sec-head"><span class="meta">Selected milestones</span><h2 class="rv">Selected Milestones</h2></div>
   <div class="stats">
     <div class="stat rv"><b>180K+</b><span class="meta">YouTube subscribers — faceless channel</span></div>
     <div class="stat rv"><b>16</b><span class="meta">Videos published during an earlier growth period</span></div>
-    <!-- EDIT: add your own, e.g. <div class="stat rv"><b>00</b><span class="meta">Label</span></div> -->
+     
   </div>
 </section>
 
-<!-- ============ CONTACT ============ -->
+
 <section id="contact">
   <p class="meta">Final scene</p>
   <h2 class="rv">Every frame leaves something behind.</h2>
-  <!-- EDIT: email + socials -->
+  
   <a class="mail" href="mailto:tenderlytormented@gmail.com">tenderlytormented@gmail.com</a>
   <div class="social meta">
     <a href="https://facebook.com/thedialectofdesire" rel="noopener">Facebook</a>
@@ -247,7 +247,7 @@ footer.end{margin-top:8vh;letter-spacing:.4em}
 </main>
 
 <script>
-/* ===== DATA — edit freely ===== */
+
 const WORKS=[
  {t:"Visual Experiments",y:"2025",c:"Visual Experiments",d:"Colour, grain and rhythm studies. Replace with your own piece.",r:"Editor",h:150},
  {t:"Short-Form Edits",y:"2025",c:"Short-Form",d:"Fast cuts with a slow heart. Placeholder entry.",r:"Editor",h:40},
@@ -272,13 +272,12 @@ const FILMS=[
 const SKILLS=[
  ["Video Editing","Pacing, rhythm, sound"],["Cinematic Storytelling","Structure & restraint"],
  ["Visual Composition","Frame, light, colour"],["Short-Form Content","Hooks without noise"],
- ["Creative Direction","Mood & identity"],["Digital Media Production","Start to delivery"],
+ ["Mag selos","Yearning"],["Digital Media Production","Start to delivery"],
  ["Visual Research","References & archives"],["Content Development","Ideas to scripts"]
 ];
 const $=s=>document.querySelector(s);
 
-/* ===== Procedural "stills" — no external images needed.
-   To use real photos, replace the <i> style with background:url(your.jpg) center/cover ===== */
+
 const still=h=>`background:
  radial-gradient(40% 60% at ${20+h%60}% ${30+h%30}%,hsl(${50+h%20} 45% 65% / .45),transparent 70%),
  linear-gradient(${120+h}deg,hsl(${140+h%30} 35% 12%),hsl(${130+h%40} 30% ${22+h%12}%) 60%,hsl(${90+h%40} 20% 40%))`;
@@ -296,20 +295,20 @@ $('#atlas-grid').innerHTML=FILMS.map((f,i)=>`
 $('#skills-list').innerHTML=SKILLS.map(s=>`<li><b>${s[0]}</b><span>${s[1]}</span></li>`).join('');
 $('#yr').textContent=new Date().getFullYear();
 
-/* ===== Loader ===== */
+
 addEventListener('load',()=>setTimeout(()=>$('#loader').classList.add('done'),900));
 
-/* ===== Reveal on scroll ===== */
+
 const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.12});
 document.querySelectorAll('.rv').forEach(el=>io.observe(el));
 
-/* ===== Nav ===== */
+
 const nav=$('#nav'),burger=$('#burger');
 burger.onclick=()=>{const o=nav.classList.toggle('open');burger.setAttribute('aria-expanded',o);burger.textContent=o?'Close':'Index'};
 nav.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{nav.classList.remove('open');burger.setAttribute('aria-expanded',false);burger.textContent='Index'}));
 addEventListener('scroll',()=>$('#top-bar').classList.toggle('solid',scrollY>80),{passive:true});
 
-/* ===== HUD + active link ===== */
+
 const labels={hero:'Personal Archive',about:'Visual Notes',works:'Selected Works',atlas:'Archive Index',skills:'Practice',milestones:'Milestones',contact:'End of Reel'};
 const so=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){
   const id=e.target.id;$('#hud-sec').textContent='Currently viewing: '+labels[id];
@@ -318,7 +317,7 @@ document.querySelectorAll('main section').forEach(s=>so.observe(s));
 addEventListener('scroll',()=>{const p=scrollY/(document.documentElement.scrollHeight-innerHeight||1);
   $('#hud-frame').textContent='Frame '+String(Math.max(1,Math.round(p*12))).padStart(3,'0')+' / 012'},{passive:true});
 
-/* ===== Custom cursor (fine pointers only) ===== */
+
 if(matchMedia('(hover:hover) and (pointer:fine)').matches){
   document.body.classList.add('has-cur');const c=$('#cur');
   addEventListener('mousemove',e=>{c.style.left=e.clientX+'px';c.style.top=e.clientY+'px'});
