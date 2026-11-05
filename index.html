@@ -74,7 +74,7 @@ nav a:hover::after,nav a.on::after{width:100%}
 /* ===== 6. ABOUT ===== */
 .about{display:grid;grid-template-columns:1fr 1.4fr;gap:6vw;align-items:start}
 .portrait{aspect-ratio:3/4;background:linear-gradient(160deg,var(--moss),var(--emerald) 55%,var(--forest));position:relative;filter:saturate(.7)}
-.portrait::after{content:"PORTRAIT — REPLACE";position:absolute;left:14px;bottom:14px;font:400 10px var(--sans);letter-spacing:.2em;color:var(--ivory)}
+.portrait img,.thumb img,.still img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
 .about p{font-size:1.05rem;max-width:56ch;color:var(--beige)}
 .about .lead{font:italic 300 clamp(1.8rem,3.4vw,3rem)/1.15 var(--serif);color:var(--ivory)}
 .about dl{display:grid;grid-template-columns:auto 1fr;gap:.5rem 2rem;margin-top:3rem}
@@ -187,7 +187,7 @@ footer.end{margin-top:8vh;letter-spacing:.4em}
 <section id="about">
   <div class="sec-head"><span class="meta">Visual notes / 01</span><h2 class="rv">About</h2></div>
   <div class="about">
-    <div class="portrait rv"></div>
+    <div class="portrait rv"><img src="images/portrait.jpg" alt="Portrait of Draco" onerror="this.remove()"></div>
     <div class="rv">
       <p class="lead">I edit the way some people write letters they never send — slowly, and mostly about what is left out.</p>
       <!-- EDIT: your biography -->
@@ -285,12 +285,12 @@ const still=h=>`background:
 
 $('#works-grid').innerHTML=WORKS.map((w,i)=>`
  <a class="work rv" href="#" onclick="return false" aria-label="${w.t}">
-  <div class="thumb"><span class="num meta">0${i+1} — ${w.c}</span><i style="${still(w.h)}"></i></div>
+  <div class="thumb"><span class="num meta">0${i+1} — ${w.c}</span><i style="${still(w.h)}"></i><img src="images/work-${i+1}.jpg" alt="${w.t}" loading="lazy" onerror="this.remove()"></div>
   <h3>${w.t}</h3><p class="meta">${w.y} · ${w.r}</p><p>${w.d}</p></a>`).join('');
 
 $('#atlas-grid').innerHTML=FILMS.map((f,i)=>`
  <article class="film rv"><span class="meta">Frame ${String(i+1).padStart(3,'0')}</span>
-  <div class="still" style="${still(i*37+10)}" role="img" aria-label="Colour study for ${f[0]}"></div>
+  <div class="still" style="${still(i*37+10)}" role="img" aria-label="Still from ${f[0]}"><img src="images/film-${String(i+1).padStart(2,'0')}.jpg" alt="" loading="lazy" onerror="this.remove()"></div>
   <h3>${f[0]}</h3><span class="meta">${f[1]} · ${f[2]} · ${f[3]}</span><p>${f[4]}</p></article>`).join('');
 
 $('#skills-list').innerHTML=SKILLS.map(s=>`<li><b>${s[0]}</b><span>${s[1]}</span></li>`).join('');
